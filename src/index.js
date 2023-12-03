@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(data => {
       const contentDiv = document.getElementById('content');
-      contentDiv.innerHTML = ''; // Clear previous content
+      contentDiv.innerHTML = ''; 
   
       const muscleGroup = exerciseURLs[index].split('=')[1];
   
       const heading = document.createElement('h2');
-      heading.textContent = `${muscleGroup.charAt(0).toUpperCase() + muscleGroup.slice(1)} Exercises`;
-      contentDiv.appendChild(heading);
+      const formattedMuscleGroup = muscleGroup.replace('_', ' ');
+heading.textContent = `${formattedMuscleGroup.charAt(0).toUpperCase() + formattedMuscleGroup.slice(1)} Exercises`;
+contentDiv.appendChild(heading);
   
       const ul = document.createElement('ul');
       data.forEach(exercise => {
