@@ -1,16 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const apiKey = apiKeys.apiKey; 
 
-  const exerciseURLs = [
-    'https://api.api-ninjas.com/v1/exercises?muscle=biceps',
-    'https://api.api-ninjas.com/v1/exercises?muscle=triceps',
-    'https://api.api-ninjas.com/v1/exercises?muscle=chest',
-    'https://api.api-ninjas.com/v1/exercises?muscle=abdominals',
-    'https://api.api-ninjas.com/v1/exercises?muscle=lower_back'
-  ];
+  const baseURL = 'https://api.api-ninjas.com/v1/exercises?muscle='  
 
-  function fetchExercises(index) {
-    fetch(exerciseURLs[index], {
+  function fetchExercises(event) {
+    const url = baseURL + event.target.id
+    fetch(url, {
       headers: {
         'X-Api-Key': apiKey
       }
@@ -22,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const contentDiv = document.getElementById('content');
       contentDiv.innerHTML = ''; 
 
-      const muscleGroup = exerciseURLs[index].split('=')[1];
+      const muscleGroup = url.split('=')[1];
   
       const heading = document.createElement('h2');
       const formattedMuscleGroup = muscleGroup.replace('_', ' ');
@@ -65,25 +60,16 @@ function displayExerciseDetails(exercise, element) {
   element.setAttribute('title', details);
 }
 
-document.getElementById('biceps').addEventListener('click', function() {
-  fetchExercises(0);
-});
 
-document.getElementById('triceps').addEventListener('click', function() {
-  fetchExercises(1);
-});
+document.querySelectorAll('.category').forEach(id => {
+  id.addEventListener('click', fetchExercises);
+})
 
-document.getElementById('chest').addEventListener('click', function() {
-  fetchExercises(2);
-});
-
-document.getElementById('abdominals').addEventListener('click', function() {
-  fetchExercises(3);
-});
-
-document.getElementById('lower-back').addEventListener('click', function() {
-  fetchExercises(4);
-});
+// document.getElementById('biceps').addEventListener('click',  fetchExercises) // add a for each loop
+// document.getElementById('triceps').addEventListener('click',  fetchExercises)
+// document.getElementById('chest').addEventListener('click',  fetchExercises)
+// document.getElementById('abdominals').addEventListener('click',  fetchExercises)
+// document.getElementById('lower-back').addEventListener('click',  fetchExercises)
 
 
 document.getElementById('content').addEventListener('mouseover', function(event) {
@@ -99,36 +85,4 @@ document.getElementById('content').addEventListener('mouseout', function(event) 
     event.target.removeAttribute('title');
   }
 });
-
-const videoIDs = {
-  biceps: 'i1YgFZB6alI',
-  triceps: 'popGXI-qs98',
-  chest: 'NsEbXsTwas8',
-  abdominals: 'Dl8N_8UtWUU',
-  lowerback: '2tnATDflg4o',
-};
-function changeVideo(muscle) {
-  const youtubeVideo = document.getElementById('youtube-video');
-  const videoID = videoIDs[muscle];
-
-  youtubeVideo.src = `https://www.youtube.com/embed/${videoID}`;
-}
-
-document.getElementById('biceps').addEventListener('click', function() {
-  changeVideo('biceps');
-});
-
-document.getElementById('triceps').addEventListener('click', function() {
-  changeVideo('triceps');
-});
-document.getElementById('chest').addEventListener('click', function() {
-  changeVideo('chest');
-});
-document.getElementById('abdominals').addEventListener('click', function() {
-    changeVideo('abdominals');    
-});
-document.getElementById('lower-back').addEventListener('click', function() {
-    changeVideo('lowerback');
-});
-
 });
