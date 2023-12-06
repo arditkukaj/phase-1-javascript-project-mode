@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       const contentDiv = document.getElementById('content');
       contentDiv.innerHTML = ''; 
-  
+
       const muscleGroup = exerciseURLs[index].split('=')[1];
   
       const heading = document.createElement('h2');
@@ -99,4 +99,36 @@ document.getElementById('content').addEventListener('mouseout', function(event) 
     event.target.removeAttribute('title');
   }
 });
+
+const videoIDs = {
+  biceps: 'i1YgFZB6alI',
+  triceps: 'popGXI-qs98',
+  chest: 'NsEbXsTwas8',
+  abdominals: 'Dl8N_8UtWUU',
+  lowerback: '2tnATDflg4o',
+};
+function changeVideo(muscle) {
+  const youtubeVideo = document.getElementById('youtube-video');
+  const videoID = videoIDs[muscle];
+
+  youtubeVideo.src = `https://www.youtube.com/embed/${videoID}`;
+}
+
+document.getElementById('biceps').addEventListener('click', function() {
+  changeVideo('biceps');
+});
+
+document.getElementById('triceps').addEventListener('click', function() {
+  changeVideo('triceps');
+});
+document.getElementById('chest').addEventListener('click', function() {
+  changeVideo('chest');
+});
+document.getElementById('abdominals').addEventListener('click', function() {
+    changeVideo('abdominals');    
+});
+document.getElementById('lower-back').addEventListener('click', function() {
+    changeVideo('lowerback');
+});
+
 });

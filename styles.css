@@ -49,3 +49,21 @@ li:hover {
   background-color: #ffffff; 
   color: #333; 
 }
+
+.selected {
+  background-color: #ffa500; 
+  color: #fff;
+}
+
+#video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; 
+  margin-bottom: 150px; 
+}
+
+#youtube-video {
+  max-width: 1000px;
+  width: 100%;
+}
