@@ -1,14 +1,12 @@
-# Phase 1 Project Guidelines
+# Excercise Single Page Application
 
-## Learning Goals
+This single-page application (SPA) provides an Exercise API containing information about various exercise categories, exercise names, descriptions, instructions, and difficulty levels.
 
-- Design and architect features across a frontend
-- Communicate and collaborate in a technical environment
-- Integrate JavaScript and an external API
-- Debug issues in small- to medium-sized projects
-- Build and iterate on a project MVP
+## Getting Started
 
-## Introduction
+To access the Exercise API, you can make requests to the following endpoint:.
+
+## Introduction 
 
 Welcome to JavaScript Project Mode!
 

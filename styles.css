@@ -3,18 +3,22 @@ ul {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif; 
+  
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   color: #333; 
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   color: #333; 
+  font-weight: 600; 
+
+
 }
 
 ul {
@@ -22,6 +26,7 @@ ul {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  color:rgb(156, 212, 212)
 }
 
 li {
@@ -64,24 +69,10 @@ li:hover {
 #content {
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 40px;
   padding: 30px;
   border-radius: 8px;
   background-color: #f8f8f8;
   color: #333; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 150px; 
-}
-
-#youtube-video {
-  max-width: 1000px;
-  width: 100%;
-  border-radius: 8px;
- 
 }
