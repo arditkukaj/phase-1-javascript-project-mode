@@ -65,12 +65,6 @@ document.querySelectorAll('.category').forEach(id => {
   id.addEventListener('click', fetchExercises);
 })
 
-// document.getElementById('biceps').addEventListener('click',  fetchExercises) // add a for each loop
-// document.getElementById('triceps').addEventListener('click',  fetchExercises)
-// document.getElementById('chest').addEventListener('click',  fetchExercises)
-// document.getElementById('abdominals').addEventListener('click',  fetchExercises)
-// document.getElementById('lower-back').addEventListener('click',  fetchExercises)
-
 
 document.getElementById('content').addEventListener('mouseover', function(event) {
   if (event.target && event.target.nodeName === 'LI') {
